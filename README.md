@@ -1,80 +1,146 @@
-Here is an updated and more meaningful `README.md` for your `distributed-system` GitHub repository. It includes a clear description, structure, and a table linking to the individual projects:
+# 🌐 Distributed System Projects
+
+Welcome to the **Distributed System Learning Repository** — a curated collection of real-world projects focused on solving common challenges in distributed systems using modern Java backend technologies.
+
+This repository is built for **engineers, architects, and learners** who want to understand the internals of distributed systems by working with practical, production-grade microservices examples.
 
 ---
 
-````markdown
-# Distributed System
+## 🧭 Goals
 
-A curated collection of hands-on projects, solutions, and patterns to help understand and solve real-world problems in distributed systems.
+- Design and implement fault-tolerant, scalable systems
+- Master patterns like Saga, 2PC, and event-driven architecture
+- Handle real-world challenges: rate limiting, retries, observability, data consistency
+- Build distributed systems that can handle **10K+ RPM**
 
-This repository is designed for engineers and architects aiming to build scalable, fault-tolerant, and resilient distributed systems. Each project demonstrates a specific aspect of distributed computing such as consistency, availability, partition tolerance, data replication, distributed transactions, rate limiting, logging, and monitoring.
+---
 
-## 📌 Repository Structure
+## 🏗️ Repository Overview
 
-Each folder in this repository is a standalone Spring Boot-based microservice or component demonstrating one or more distributed systems principles. Technologies used include:
+Each folder in this repository is a **standalone Spring Boot project** with its own purpose and configuration. These projects cover architectural patterns, system design practices, and infrastructure capabilities essential to distributed computing.
 
-- **Java & Spring Boot**
-- **Kafka / RabbitMQ**
-- **PostgreSQL / Redis**
-- **Docker / Kubernetes**
-- **OpenTelemetry / Prometheus / Grafana**
+### 📁 Directory Layout
 
-## 🧠 Topics Covered
+```bash
+distributed-system/
+├── 01-rate-limiter/
+├── 02-saga-orchestration/
+├── 03-saga-choreography/
+├── 04-2pc-coordinator/
+├── 05-open-telemetry-logging-library/
+├── 06-kafka-keycloak-auth/
+├── 07-recommendation-engine/
+├── 08-microservices-observability/
+├── 09-etl-spring-batch-pipeline/
+├── 10-api-gateway-eureka-loadbalancer/
+└── 11-order-processing-system/
+```
 
-- Service Discovery & Load Balancing
-- Distributed Transactions (2PC, Saga)
-- Rate Limiting Algorithms
-- Distributed Logging & Tracing
-- Event-Driven Architecture with Kafka
-- Fault Tolerance & Retry Mechanisms
-- CAP Theorem-Based Design Scenarios
-- Consistency Patterns and Versioning
-- Schema Evolution in ETL Pipelines
+---
 
-## 📂 Project Index
+## 🔧 Tech Stack
 
-| Project Name                                      | Description                                                              | Link                                                                 |
-|--------------------------------------------------|--------------------------------------------------------------------------|----------------------------------------------------------------------|
-| **01-rate-limiter**                              | Implementation of Token Bucket, Leaky Bucket, and Sliding Window models | [View Project](./01-rate-limiter)                                    |
-| **02-saga-orchestration**                        | Saga pattern using orchestration via Spring Boot + Kafka                | [View Project](./02-saga-orchestration)                              |
-| **03-saga-choreography**                         | Choreography pattern with decoupled microservices & Kafka               | [View Project](./03-saga-choreography)                               |
-| **04-2pc-coordinator**                           | Two-phase commit implementation with a transaction coordinator          | [View Project](./04-2pc-coordinator)                                 |
-| **05-open-telemetry-logging-library**            | Custom tracing and logging library using OpenTelemetry                  | [View Project](./05-open-telemetry-logging-library)                  |
-| **06-kafka-keycloak-auth**                       | Kafka integration with Keycloak for OAuth2-secured producers/consumers | [View Project](./06-kafka-keycloak-auth)                             |
-| **07-recommendation-engine**                     | Product recommendation using clickstream data                           | [View Project](./07-recommendation-engine)                           |
-| **08-microservices-observability**               | Distributed observability stack: Prometheus + Grafana + OpenTelemetry   | [View Project](./08-microservices-observability)                     |
-| **09-etl-spring-batch-pipeline**                 | ETL processing using Spring Batch with fault tolerance & partitioning   | [View Project](./09-etl-spring-batch-pipeline)                       |
-| **10-api-gateway-eureka-loadbalancer**           | Microservice ecosystem with API Gateway, Eureka, load-balanced services| [View Project](./10-api-gateway-eureka-loadbalancer)   
-| **11-order-processing-system**           | Microservices architecture designed to simulate a high-throughput, high-load order processing system | [View Project](./11-order-processing-system/) |            |
+| Layer            | Technologies                                                                 |
+|------------------|------------------------------------------------------------------------------|
+| **Backend**       | Java, Spring Boot, Spring Cloud                                              |
+| **Messaging**     | Kafka, RabbitMQ                                                              |
+| **Database**      | PostgreSQL, MySQL, Redis                                                     |
+| **Security**      | Keycloak, OAuth2, Spring Security                                            |
+| **Infrastructure**| Docker, Docker Compose, Kubernetes                                           |
+| **Monitoring**    | OpenTelemetry, Prometheus, Grafana                                           |
+| **ETL/Batch**     | Spring Batch                                                                 |
+| **Testing**       | JUnit, TestContainers, Mockito                                               |
 
-> 📁 *More projects coming soon...*
+---
+
+## 📦 Project Index
+
+Each project below is an isolated Spring Boot module demonstrating a specific distributed system concept.
+
+### 🔄 Core Distributed Patterns
+
+- 🧱 **[01 - Rate Limiter](./01-rate-limiter/README.md)**  
+  Token Bucket, Leaky Bucket, and Sliding Window rate limiting strategies.
+
+- ⚙️ **[02 - Saga Orchestration](./02-saga-orchestration/README.md)**  
+  Orchestrated Saga pattern using a command-based transaction manager and Kafka.
+
+- 🔗 **[03 - Saga Choreography](./03-saga-choreography/README.md)**  
+  Decentralized Saga pattern where services react to events and trigger next actions.
+
+- 💡 **[04 - 2PC Coordinator](./04-2pc-coordinator/README.md)**  
+  Two-phase commit protocol with a coordinator ensuring distributed transaction integrity.
+
+### 🔐 Security & Access Control
+
+- 🔒 **[06 - Kafka Keycloak Auth](./06-kafka-keycloak-auth/README.md)**  
+  OAuth2-secured Kafka client integration using Keycloak for producer/consumer authentication.
+
+### 🧠 Recommendation & Business Logic
+
+- 🛍️ **[07 - Recommendation Engine](./07-recommendation-engine/README.md)**  
+  Product suggestion system based on user clickstream frequency.
+
+- 📦 **[11 - Order Processing System](./11-order-processing-system/prd/real-time-order-processing-prd.md)**  
+  High-throughput microservice architecture simulating scalable order workflows.
+
+### 🔭 Observability & Logging
+
+- 📈 **[05 - OpenTelemetry Logging Library](./05-open-telemetry-logging-library/README.md)**  
+  Centralized, reusable tracing and logging library using OpenTelemetry SDK.
+
+- 📊 **[08 - Microservices Observability](./08-microservices-observability/README.md)**  
+  Distributed monitoring with Prometheus, Grafana, and OpenTelemetry integration.
+
+### 🔄 ETL & Data Pipelines
+
+- 🔄 **[09 - ETL Spring Batch Pipeline](./09-etl-spring-batch-pipeline/README.md)**  
+  Batch data processing using Spring Batch with fault tolerance and partitioning.
+
+### 🌐 Infrastructure & Routing
+
+- 🌍 **[10 - API Gateway & Eureka Load Balancer](./10-api-gateway-eureka-loadbalancer/README.md)**  
+  Spring Cloud Gateway setup with Eureka for service discovery and load-balanced routing.
+
+---
 
 ## 🚀 Getting Started
 
-To run any project:
+### 🧪 Run a Project Locally
 
 ```bash
 cd <project-folder>
 ./mvnw spring-boot:run
-````
+```
 
-Docker-based projects can be run using:
+### 🐳 Run with Docker
 
 ```bash
 docker-compose up --build
 ```
 
-## 🤝 Contributions
-
-Feel free to fork, raise PRs, or open issues. This repo is a continuous learning exercise—improvements, suggestions, and bug fixes are always welcome!
-
-## 📜 License
-
-[MIT License](LICENSE)
-
-```
+> Each sub-project includes its own `README.md` with usage instructions, config, and API reference.
 
 ---
 
-Let me know if you'd like me to generate the folder structures and `README.md` for each subproject (`01-rate-limiter`, `02-saga-orchestration`, etc.), or if you'd like the full content as a downloadable ZIP.
-```
+## 🤝 Contribution Guidelines
+
+We welcome contributions! Please consider the following before submitting PRs:
+
+- Follow the existing code style and architecture
+- Write meaningful commit messages
+- Add test coverage for new features
+- Raise an issue for discussion before proposing large changes
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+
+---
+
+## 💬 Feedback
+
+If you find this repository helpful, consider ⭐ starring it.  
+Feel free to open issues for suggestions, bugs, or improvements.
